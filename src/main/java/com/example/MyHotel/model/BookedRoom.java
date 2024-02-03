@@ -1,9 +1,6 @@
 package com.example.MyHotel.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +17,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class BookedRoom {
     private long bookingId;
+    @Column(name = "check_in")
     private LocalDate checkInDate;
+    @Column(name = "check_out")
     private LocalDate checkOutDate;
     private String guestFullName;
     private String guestEmail;
