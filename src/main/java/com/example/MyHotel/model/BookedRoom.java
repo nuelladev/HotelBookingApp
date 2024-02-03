@@ -17,11 +17,16 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class BookedRoom {
     private long bookingId;
+
     @Column(name = "check_in")
     private LocalDate checkInDate;
+
     @Column(name = "check_out")
     private LocalDate checkOutDate;
+
+    @Column(name = "guest_FullName")
     private String guestFullName;
+
     private String guestEmail;
     private int NumOfAdults;
     private int NumOfChildren;
