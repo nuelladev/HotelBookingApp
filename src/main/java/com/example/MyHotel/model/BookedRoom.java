@@ -16,6 +16,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BookedRoom {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long bookingId;
 
     @Column(name = "check_in")
@@ -36,8 +39,7 @@ public class BookedRoom {
     @Column(name = "children")
     private int NumOfChildren;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int totalNumOfGuests;
 
     private String bookingConfirmationCode;
