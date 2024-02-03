@@ -1,6 +1,9 @@
 package com.example.MyHotel.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +26,8 @@ public class BookedRoom {
     private String guestEmail;
     private int NumOfAdults;
     private int NumOfChildren;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int totalNumOfGuests;
 
     private String bookingConfirmationCode;
