@@ -30,4 +30,7 @@ public class BookedRoom {
         calculateTotalNumberOfGuests();
     }
 
+    public void setBookingConfirmationCode(String bookingConfirmationCode) {
+        this.bookingConfirmationCode = bookingConfirmationCode;
+    }
 }
