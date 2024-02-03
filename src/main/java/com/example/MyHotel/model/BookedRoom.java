@@ -1,9 +1,20 @@
 package com.example.MyHotel.model;
 
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDate;
 /**
  * @author Emmanuella Okafor
  */
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class BookedRoom {
     private long bookingId;
     private LocalDate checkInDate;
