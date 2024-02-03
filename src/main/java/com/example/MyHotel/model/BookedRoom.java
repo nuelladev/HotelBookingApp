@@ -29,8 +29,13 @@ public class BookedRoom {
 
     @Column(name = "guest_Email")
     private String guestEmail;
+
+    @Column(name = "adults")
     private int NumOfAdults;
+
+    @Column(name = "children")
     private int NumOfChildren;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int totalNumOfGuests;
