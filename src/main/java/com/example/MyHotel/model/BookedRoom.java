@@ -44,7 +44,7 @@ public class BookedRoom {
 
     @Column(name = "confirmation_code")
     private String bookingConfirmationCode;
-
+    @JoinColumn(name = "room_id")
     private Room room;
 
     public void calculateTotalNumberOfGuests(){
