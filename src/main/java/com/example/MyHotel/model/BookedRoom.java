@@ -39,7 +39,7 @@ public class BookedRoom {
     @Column(name = "children")
     private int NumOfChildren;
 
-
+    @Column(name = "total_guests")
     private int totalNumOfGuests;
 
     private String bookingConfirmationCode;
