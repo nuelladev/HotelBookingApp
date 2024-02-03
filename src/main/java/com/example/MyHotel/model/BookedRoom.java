@@ -27,6 +27,7 @@ public class BookedRoom {
     @Column(name = "guest_FullName")
     private String guestFullName;
 
+    @Column(name = "guest_Email")
     private String guestEmail;
     private int NumOfAdults;
     private int NumOfChildren;
