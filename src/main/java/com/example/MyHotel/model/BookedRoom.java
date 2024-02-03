@@ -42,7 +42,9 @@ public class BookedRoom {
     @Column(name = "total_guests")
     private int totalNumOfGuests;
 
+    @Column(name = "confirmation_code")
     private String bookingConfirmationCode;
+
     private Room room;
 
     public void calculateTotalNumberOfGuests(){
