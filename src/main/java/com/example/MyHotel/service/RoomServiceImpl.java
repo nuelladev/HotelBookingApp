@@ -2,6 +2,7 @@ package com.example.MyHotel.service;
 
 import com.example.MyHotel.model.Room;
 import com.example.MyHotel.repository.RoomRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.sql.rowset.serial.SerialBlob;
@@ -9,11 +10,11 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.sql.SQLException;
-
+@RequiredArgsConstructor
 public class RoomServiceImpl implements RoomService {
-    private RoomRepository roomRepository;
+    private final RoomRepository roomRepository;
     @Override
-    public Room addNewRoom(MultipartFile file, String roomType, BigDecimal roomPrice throws SQLException, IOException) {
+    public Room addNewRoom(MultipartFile file, String roomType, BigDecimal roomPrice) throws IOException, SQLException {
         Room room = new Room();
         room.setRoomType(roomType);
         room.setRoomPrice(roomPrice);
@@ -22,6 +23,6 @@ public class RoomServiceImpl implements RoomService {
             Blob photoBlob = new SerialBlob(photoBytes);
             room.setRoomPhoto(photoBlob);
         }
-        return room
+        return roomRepository.save(room);
     }
 }
