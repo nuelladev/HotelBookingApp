@@ -6,9 +6,11 @@ import com.example.MyHotel.service.RoomService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
+@RestController
 @RequiredArgsConstructor
 public class RoomController {
 
@@ -19,5 +21,8 @@ public class RoomController {
                @RequestParam("roomPrice")BigDecimal roomPrice){
         Room savedRoom = roomService.addNewRoom(roomPhoto, roomType, roomPrice);
         RoomResponse response = new RoomResponse(savedRoom.getId(), savedRoom.getRoomType(), savedRoom.getRoomPrice());
+        return ResponseEntity.ok(response);
     }
+
+
 }
