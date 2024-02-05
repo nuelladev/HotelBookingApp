@@ -1,4 +1,5 @@
 package com.example.MyHotel.service;
 
-public class RoomServiceImpl {
+public class RoomServiceImpl implements RoomService {
+
 }
