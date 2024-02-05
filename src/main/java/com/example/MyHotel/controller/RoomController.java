@@ -17,7 +17,7 @@ public class RoomController {
     addNewRoom(@RequestParam("roomPhoto") MultipartFile roomPhoto,
                @RequestParam("roomType")String roomType,
                @RequestParam("roomPrice")BigDecimal roomPrice){
-        Room savedRoom = roomService.addNewRoom(roomPhoto, roomType, roomPrice)
-
+        Room savedRoom = roomService.addNewRoom(roomPhoto, roomType, roomPrice);
+        RoomResponse response = new RoomResponse(savedRoom.getId(), savedRoom.getRoomType(), savedRoom.getRoomPrice());
     }
 }
