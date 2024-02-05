@@ -1,9 +1,6 @@
 package com.example.MyHotel.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,9 +22,17 @@ public class Room {
     private String roomType;
     private BigDecimal roomPrice;
     private boolean isBooked = false;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BookedRoom> bookings;
 
     public Room(){
         this.bookings = new ArrayList<>();
+    }
+
+    public void addBooking(BookedRoom booking){
+        if (bookings == null){
+            bookings = new ArrayList<>();
+        }
     }
 }
