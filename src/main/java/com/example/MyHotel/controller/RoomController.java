@@ -9,9 +9,9 @@ import java.math.BigDecimal;
 
 public class RoomController {
     public ResponseEntity<RoomResponse>
-    addNewRoom(@RequestParam("photo") MultipartFile roomPhoto,
-               @RequestParam("photo")String roomType,
-               @RequestParam("photo")BigDecimal roomPrice){
+    addNewRoom(@RequestParam("roomPhoto") MultipartFile roomPhoto,
+               @RequestParam("roomType")String roomType,
+               @RequestParam("roomPrice")BigDecimal roomPrice){
 
     }
 }
