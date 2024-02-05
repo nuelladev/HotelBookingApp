@@ -17,11 +17,13 @@ public class RoomResponse {
     private String roomPhoto;
     private List<BookingResponse> bookings;
 
-    public RoomResponse(Long id, BigDecimal roomPrice, boolean isBooked) {
+
+    public RoomResponse(Long id, String roomType, BigDecimal roomPrice) {
         this.id = id;
+        this.roomType = roomType;
         this.roomPrice = roomPrice;
-        this.isBooked = isBooked;
     }
+
 
     public RoomResponse(Long id, String roomType, BigDecimal roomPrice, boolean isBooked, byte[] photoByte, List<BookingResponse> bookings) {
         this.id = id;
