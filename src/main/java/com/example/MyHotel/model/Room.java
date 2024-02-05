@@ -36,5 +36,6 @@ public class Room {
         }
         bookings.add(booking);
         booking.setRoom(this);
+        isBooked = true;
     }
 }
